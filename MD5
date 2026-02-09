@@ -1,6 +1,6 @@
-f2db63c1b4794900967721cde62dee20 *DESCRIPTION
+d0fd8735d471afd9462aa173acba5b2f *DESCRIPTION
 2a204f006caa299b52cae788a9d49849 *NAMESPACE
-e461772d11aeb1bd1a1f2ab8c266b944 *NEWS.md
+8246bd6607e06f53071bc3a5887ffaa6 *NEWS.md
 9471c81ab1fee37c18893e82425184a9 *R/coeftest-methods.R
 c939ea5a5fc99674637505396b5fc14c *R/dispersiontest.R
 6011128a4cac257b70a90b3e9c641758 *R/ivreg.R
@@ -125,11 +125,11 @@ ce79593f13ea25f8dcea3e8b0e86c6c0 *demo/Ch-LinearRegression.R
 3e90c714c97233d018c6b616fc7c61e4 *demo/Ch-Validation.R
 e5e200df9012bb504082497e5bbcc5ee *inst/CITATION
 d320a0b0d4260e95b7f54aa7328e0d1d *inst/doc/AER.R
-b13a8a569732c34ca62f226d55855166 *inst/doc/AER.Rnw
-f18f29f2b248a198f0fe2e2c5b886200 *inst/doc/AER.pdf
+cef66df2d8e385a1cd033d87391dda9a *inst/doc/AER.Rnw
+9013d8a142b325316d73ff895f94044d *inst/doc/AER.pdf
 55645a67fdf53c524f1352c9ba6a5910 *inst/doc/Sweave-journals.R
 043acb4ba18e012bfc0c60717156d385 *inst/doc/Sweave-journals.Rnw
-1ad4b45a3944c9e249fec697954ef5e1 *inst/doc/Sweave-journals.pdf
+7e33be30ff1b0518bc6cc9bd23fdea14 *inst/doc/Sweave-journals.pdf
 b96c8a347a604768948d9a1392cd27eb *man/Affairs.Rd
 4afb2c56e98ee17f412cb0ad3786167b *man/ArgentinaCPI.Rd
 b911b4a5e5e2f1d060d61592ea50390f *man/Baltagi2002.Rd
@@ -254,8 +254,8 @@ cc84cc23d5423f0ed2c6dfbed4fae56f *tests/Ch-Microeconometrics.Rout.save
 f433592b493d4128cb42f0f5cbddfd16 *tests/Ch-Programming.Rout.save
 976c5122fc8e354c5c1ee324919308f0 *tests/Ch-TimeSeries.R
 504d4e859734444014c41932c0b4e870 *tests/Ch-TimeSeries.Rout.save
-310a390191d82bcb7dda0342a8b29bc2 *tests/Ch-Validation.R
-6b3555af04e822d04bcd7e906ab9ca34 *tests/Ch-Validation.Rout.save
-b13a8a569732c34ca62f226d55855166 *vignettes/AER.Rnw
+ed50f83fb024cfa495b93cc200cd4aa8 *tests/Ch-Validation.R
+4e52ca487a6d44ebd7018dd1cb117cb5 *tests/Ch-Validation.Rout.save
+cef66df2d8e385a1cd033d87391dda9a *vignettes/AER.Rnw
 043acb4ba18e012bfc0c60717156d385 *vignettes/Sweave-journals.Rnw
-290f9aa4f0ebe92b19f3e68a93ec054c *vignettes/aer.bib
+cc00d5286c2ad4d66a94b7bfef59d1d4 *vignettes/aer.bib

@@ -55,21 +55,21 @@ options(prompt = "R> ", digits = 4, show.signif.stars = FALSE)
 
 \Address{
   Christian Kleiber\\
-  Faculty of Business and Economics\\
   Universit\"at Basel\\
+  Faculty of Business and Economics\\
   Peter Merian-Weg 6\\
   4002 Basel, Switzerland\\
   E-mail: \email{Christian.Kleiber@unibas.ch}\\
-  URL: \url{https://wwz.unibas.ch/en/kleiber/}\\
+  URL: \url{https://wwz.unibas.ch/en/persons/christian-kleiber/}\\
 
   Achim Zeileis\\
-  Department of Statistics\\
-  Faculty of Economics and Statistics\\
   Universit\"at Innsbruck\\
+  Faculty of Economics and Statistics\\
+  Department of Statistics\\
   Universit\"atsstr.~15\\
   6020 Innsbruck, Austria\\
   E-mail: \email{Achim.Zeileis@R-project.org}\\
-  URL: \url{https://eeecon.uibk.ac.at/~zeileis/}
+  URL: \url{https://www.zeileis.org/}
 }
 
 \begin{document}
@@ -270,7 +270,7 @@ giving the log-likelihood
     \begin{quote}
       Henningsen A (2008). ``Demand Analysis with the Almost Ideal Demand System
       in \proglang{R}: Package \pkg{micEcon},'' Unpublished.
-      URL~\url{http://CRAN.R-project.org/package=micEcon}.
+      URL~\url{https://CRAN.R-project.org/package=micEcon}.
     \end{quote}
 \end{itemize}
 

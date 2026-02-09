@@ -22,7 +22,6 @@ set.seed(1071)
 ### chunk number 2: ps-summary
 ###################################################
 data("PublicSchools")
-summary(PublicSchools)
 
 
 ###################################################

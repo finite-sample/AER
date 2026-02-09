@@ -55,15 +55,6 @@ R> ###################################################
 R> ### chunk number 2: ps-summary
 R> ###################################################
 R> data("PublicSchools")
-R> summary(PublicSchools)
-  Expenditure      Income     
- Min.   :259   Min.   : 5736  
- 1st Qu.:315   1st Qu.: 6670  
- Median :354   Median : 7597  
- Mean   :373   Mean   : 7608  
- 3rd Qu.:426   3rd Qu.: 8286  
- Max.   :821   Max.   :10851  
- NA's   :1                    
 R> 
 R> 
 R> ###################################################
