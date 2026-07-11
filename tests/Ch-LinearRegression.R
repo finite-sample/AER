@@ -236,7 +236,7 @@ cps_bs <- lapply(3:10, function(i) lm(log(wage) ~
   bs(experience, df = i) + education + ethnicity,
   data = CPS1988))
 structure(sapply(cps_bs, AIC, k = log(nrow(CPS1988))),
-  .Names = 3:10)
+  names = 3:10)
 
 
 ###################################################

@@ -596,7 +596,7 @@ R>
 R> ###################################################
 R> ### chunk number 48: rqbig-plot1
 R> ###################################################
-R> plot(cps_rqbigs)
+R> suppressWarnings(plot(cps_rqbigs))
 R> 
 R> 
 R> 

@@ -179,12 +179,7 @@ R>
 R> ###################################################
 R> ### chunk number 15: srq-plot1
 R> ###################################################
-R> try(plot(summary(cps_rq)))
-Warning messages:
-1: In rq.fit.br(x, y, tau = tau, ci = TRUE, ...) :
-  Solution may be nonunique
-2: In rq.fit.br(x, y, tau = tau, ci = TRUE, ...) :
-  Solution may be nonunique
+R> suppressWarnings(try(plot(summary(cps_rq))))
 R> 
 R> 
 R> ###################################################

@@ -118,7 +118,7 @@ for(i in 6:10) lines(cps2[,i] ~ experience,
 ###################################################
 ### chunk number 15: srq-plot1
 ###################################################
-try(plot(summary(cps_rq)))
+suppressWarnings(try(plot(summary(cps_rq))))
 
 
 ###################################################

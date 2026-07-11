@@ -13,5 +13,3 @@ journals_lm
 ###################################################
 plot(log(subs) ~ log(price/citations), data = Journals)
 abline(journals_lm)
-
-

@@ -390,7 +390,7 @@ R> cps_bs <- lapply(3:10, function(i) lm(log(wage) ~
 +    bs(experience, df = i) + education + ethnicity,
 +    data = CPS1988))
 R> structure(sapply(cps_bs, AIC, k = log(nrow(CPS1988))),
-+    .Names = 3:10)
++    names = 3:10)
     3     4     5     6     7     8     9    10 
 49205 48836 48794 48795 48801 48797 48799 48802 
 R> 

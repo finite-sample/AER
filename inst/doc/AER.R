@@ -31,5 +31,3 @@ options(prompt = "R> ", digits = 4, show.signif.stars = FALSE)
 ##      + log(capital) + lag(log(output), 0:1) | lag(log(emp), 2:99),
 ##      data = EmplUK, index = c("firm", "year"), 
 ##      effect = "twoways", model = "twosteps")
-
-

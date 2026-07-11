@@ -359,6 +359,6 @@ cps_rqbigs <- summary(cps_rqbig)
 ###################################################
 ### chunk number 48: rqbig-plot1
 ###################################################
-plot(cps_rqbigs)
+suppressWarnings(plot(cps_rqbigs))
 
 

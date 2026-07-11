@@ -1,3 +1,8 @@
+# AER 1.2-17
+
+* Updated `structure()` calls to use `names = ...` instead of `.Names = ...` etc.
+
+
 # AER 1.2-16
 
 * Omitted some examples and updated corresponding output for CRAN checks.
