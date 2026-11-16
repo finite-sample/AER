@@ -1,3 +1,16 @@
+# AER 1.2-18
+
+* `tobit()` now evaluates the `survreg()` call in the frame of the caller
+  (as `lm()` does) rather than in the environment of the formula. Previously,
+  when `tobit()` was called inside a function (e.g., via `lapply()` over
+  subsets) with a formula created elsewhere, `data`, `weights`, and `subset`
+  were looked up in the formula's environment, so an object of the same name
+  there (e.g., the full data set) was silently used instead of the data passed
+  by the caller. `tobit()` now also keeps the model frame so that
+  `model.frame()`, `estfun()`, `sandwich()`, and `vcovCL()` use the same data
+  as the fit.
+
+
 # AER 1.2-17
 
 * Updated `structure()` calls to use `names = ...` instead of `.Names = ...` etc.
