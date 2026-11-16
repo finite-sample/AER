@@ -108,7 +108,7 @@ ivreg.fit <- function(x, y, z, weights, offset, ...)
  
   ## model fit information
   ok <- which(!is.na(fit$coefficients))
-  yhat <- drop(x[, ok, drop = FALSE] %*% fit$coefficients[ok])
+  yhat <- drop(x[, ok, drop = FALSE] %*% fit$coefficients[ok]) + offset
   names(yhat) <- names(y)
   res <- y - yhat
   ucov <- chol2inv(fit$qr$qr[1:length(ok), 1:length(ok), drop = FALSE])
@@ -202,7 +202,15 @@ predict.ivreg <- function(object, newdata, na.action = na.pass, ...)
     X <- model.matrix(delete.response(object$terms$regressors), mf,
       contrasts = object$contrasts$regressors)
     ok <- !is.na(object$coefficients)
-    drop(X[, ok, drop = FALSE] %*% object$coefficients[ok])
+    yhat <- drop(X[, ok, drop = FALSE] %*% object$coefficients[ok])
+    ## offsets from offset() terms in the formula and from the 'offset' argument
+    offset <- model.offset(mf)
+    if(!is.null(off <- object$call$offset)) {
+      off <- eval(off, newdata, environment(object$terms$full))
+      offset <- if(is.null(offset)) off else offset + off
+    }
+    if(!is.null(offset)) yhat <- yhat + offset
+    yhat
   }
 }
 
@@ -359,6 +367,7 @@ update.ivreg <- function (object, formula., ..., evaluate = TRUE)
 ivdiag <- function(obj, vcov. = NULL) {
   ## extract data
   y <- model.response(model.frame(obj))
+  if(!is.null(obj$offset)) y <- y - obj$offset
   x <- model.matrix(obj, component = "regressors")
   z <- model.matrix(obj, component = "instruments")
   w <- weights(obj)
