@@ -1,3 +1,13 @@
+# AER 1.2-18
+
+* `hatvalues()` for `ivreg()` fits with `weights` ignored the weights (while
+  mixing in the weighted projection of the regressors), so `vcovHC()` with
+  `type = "HC2"`, `"HC3"` (the default), `"HC4"`, etc. was wrong for weighted
+  IV regressions. The hat values are now computed from the
+  `sqrt(weights)`-scaled matrices, as for weighted `lm()`; with the regressors
+  as their own instruments they now equal those of `lm()`.
+
+
 # AER 1.2-17
 
 * Updated `structure()` calls to use `names = ...` instead of `.Names = ...` etc.
