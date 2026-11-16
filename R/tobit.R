@@ -59,8 +59,6 @@ deviance.survreg <- function(object, ...)
 
 tobit <- function(formula, left = 0, right = Inf, dist = "gaussian", subset = NULL, data = list(), ...)
 {
-  ## remember original environment
-  oenv <- environment(formula)
   oformula <- eval(formula)
   
   ## process censoring
@@ -96,7 +94,12 @@ tobit <- function(formula, left = 0, right = Inf, dist = "gaussian", subset = NU
   cl$right <- NULL
   cl$dist <- dist
   cl[[1]] <- quote(survival::survreg)
-  rval <- eval(cl, oenv)
+  ## keep the model frame so that model.frame() (and hence estfun(), sandwich(),
+  ## vcovCL()) does not have to re-evaluate the data in the formula's environment
+  if(is.null(cl$model)) cl$model <- TRUE
+  ## evaluate in the caller's frame (as lm() does) so that 'data', 'weights',
+  ## and 'subset' refer to the caller's objects, not to the formula's environment
+  rval <- eval(cl, parent.frame())
 
   ## slightly modify result
   class(rval) <- c("tobit", class(rval))
@@ -279,6 +282,7 @@ model.frame.tobit <- function(formula, ...)
   Call <- Call[match(c("", "formula", "data", "weights", "subset", "na.action"), names(Call), 0)]
   dots <- list(...)
   nargs <- dots[match(c("data", "na.action", "subset"), names(dots), 0)]
+  if(length(nargs) == 0L && !is.null(formula$model)) return(formula$model)
   Call[names(nargs)] <- nargs
   Call$formula <- formula$formula
   env <- environment(formula$terms)
