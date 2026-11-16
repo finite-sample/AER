@@ -159,6 +159,14 @@ hatvalues.ivreg <- function(model, ...) {
   xz <- model.matrix(model, component = "projected")
   x  <- model.matrix(model, component = "regressors")
   z  <- model.matrix(model, component = "instruments")
+  ## with weights the hat matrix is W^(1/2) X (Xz' W Xz)^(-1) Xz' W^(1/2),
+  ## as for weighted lm(), so all three matrices are scaled by sqrt(w)
+  w <- weights(model)
+  if(!is.null(w)) {
+    xz <- sqrt(w) * xz
+    x  <- sqrt(w) * x
+    z  <- sqrt(w) * z
+  }
   solve_qr <- function(x) chol2inv(qr.R(qr(x)))
   diag(x %*% solve_qr(xz) %*% t(x) %*% z %*% solve_qr(z) %*% t(z))
 }
