@@ -1,3 +1,14 @@
+# AER 1.2-18
+
+* `ivreg()` with an `offset` (either via the `offset` argument or an `offset()`
+  term in the formula) estimated the coefficients correctly but did not add
+  the offset to the fitted values. Hence the residuals contained the offset,
+  and the residual standard error, `vcov()`, `summary()`, `sandwich()`/`vcovHC()`,
+  and the Sargan test were wrong. Also the Wu-Hausman test ignored the offset
+  and `predict()` with `newdata` omitted it. All of these now match a fit of
+  the response minus the offset.
+
+
 # AER 1.2-17
 
 * Updated `structure()` calls to use `names = ...` instead of `.Names = ...` etc.
